@@ -243,7 +243,7 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@mantine/core@7.16.0":
+"@mantine/core@^7.16.0":
   version "7.16.0"
   resolved "https://registry.npmjs.org/@mantine/core/-/core-7.16.0.tgz"
   integrity sha512-lYYwa4Itz77uC8zQzdiKiKdz9Q01NBOYPZsotIKsP/Zqij0qhpsVxoJ8MK3P8IqFyLfThTMmR4sT1qlGfLTA9Q==
@@ -255,7 +255,7 @@
     react-textarea-autosize "8.5.6"
     type-fest "^4.27.0"
 
-"@mantine/hooks@7.16.0":
+"@mantine/hooks@^7.16.0":
   version "7.16.0"
   resolved "https://registry.npmjs.org/@mantine/hooks/-/hooks-7.16.0.tgz"
   integrity sha512-8KxrhckesbrV6tyOndm6fJ+jSKA4KX/67ppDFlfYMMbV6Yh+s0zRO4KLi2uCtl6tgckQd2/zDzX3kQk+VYKqDA==
