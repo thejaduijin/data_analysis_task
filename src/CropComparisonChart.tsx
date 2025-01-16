@@ -66,7 +66,7 @@ const CropComparisonChart = ({ data }: any) => {
 
     return (
         <>
-            <div id="crop-yield-chart" style={{ width: '100%', height: '400px' }} />
+            <div id="crop-yield-chart" className='baseStyle'/>
         </>
     );
 };

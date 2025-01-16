@@ -1,4 +1,4 @@
-import { Table } from "@mantine/core";
+import { ScrollArea, Table } from "@mantine/core";
 import { useState, useEffect } from "react";
 import CropCharts from "./CropData";
 
@@ -26,14 +26,13 @@ const FetchData = () => {
             });
     }, []);
 
-   
+
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error}</p>;
 
     const rows = data.map((item, index) => (
         <Table.Tr key={index}>
-            <Table.Td>{item['Country']}</Table.Td>
             <Table.Td>{item['Year']}</Table.Td>
             <Table.Td>{item["Crop Name"]}</Table.Td>
             <Table.Td>{item["Crop Production (UOM:t(Tonnes))"] || 0}</Table.Td>
@@ -44,20 +43,23 @@ const FetchData = () => {
 
     return (
         <div>
-            <h1>Crop Data</h1>
-            <Table>
-                <Table.Thead>
-                    <Table.Tr>
-                        <Table.Th>Country</Table.Th>
-                        <Table.Th>Year</Table.Th>
-                        <Table.Th>Crop Name</Table.Th>
-                        <Table.Th>Crop Production (Tonnes)</Table.Th>
-                        <Table.Th>Yield (Kg/Ha)</Table.Th>
-                        <Table.Th>Area Under Cultivation (Ha)</Table.Th>
-                    </Table.Tr>
-                </Table.Thead>
-                <Table.Tbody>{rows}</Table.Tbody>
-            </Table>
+            <h1 style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>Crop Data</h1>
+            <div className="mainTable" style={{ border: "5px solid beige", width: "80%", margin: "auto" }}>
+                <ScrollArea h={500} scrollbarSize={8}>
+                    <Table withTableBorder>
+                        <Table.Thead style={{ position: 'sticky', top: 0, backgroundColor: '#fff', zIndex: 1 }}>
+                            <Table.Tr>
+                                <Table.Th>Year</Table.Th>
+                                <Table.Th>Crop Name</Table.Th>
+                                <Table.Th>Crop Production (Tonnes)</Table.Th>
+                                <Table.Th>Yield (Kg/Ha)</Table.Th>
+                                <Table.Th>Area Under Cultivation (Ha)</Table.Th>
+                            </Table.Tr>
+                        </Table.Thead>
+                        <Table.Tbody>{rows}</Table.Tbody>
+                    </Table>
+                </ScrollArea>
+            </div>
             <CropCharts data={data}></CropCharts>
         </div>
     );

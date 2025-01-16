@@ -65,7 +65,7 @@ const CropCharts = ({ data }: any) => {
         <>
             {data &&
                 [...new Set(data.map((item: any) => item["Crop Name"]))].map((crop: any, index: any) => (
-                    <div key={index} id={`chart-${index}`} style={{ width: '100%', height: '400px', marginBottom: '20px' }} />
+                    <div key={index} id={`chart-${index}`} className='baseStyle' />
                 ))
             }
             <CropComparisonChart data={data}></CropComparisonChart>
